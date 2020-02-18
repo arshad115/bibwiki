@@ -48,7 +48,7 @@ function updateBibtex() {
     followRedirects(country, input, function(country, title) {
     getPageDetails(country, title, function(info) {
         $('#output').text('@misc{wiki:' + nameifyTitle(info.title) + ',\n' +
-        '   author = {Wikipedia, the free encyclopedia},\n' +
+        '   author = {Wikipedia},\n' +
         '   title = {' + info.title + '},\n' +
         '   year = {' + moment().format('YYYY') + '},\n' +
         '   howpublished = {\\' + $('#urlpackage').val() + '{http://' + info.country + '.wikipedia.org/w/index.php?title=' + encodeURIComponent(info.title).split("%").join("\\%") + '&oldid=' + info.oldid + '}},\n' +
