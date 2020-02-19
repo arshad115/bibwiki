@@ -55,6 +55,12 @@ function updateBibtex() {
         '   note = {Online; accessed ' + moment().format('DD-MMMM-YYYY') + '}\n' +
         ' }');
 
+      $('#output1').text('\\bibitem{wiki:' + nameifyTitle(info.title) + '. Wikipedia. ' + info.title + '. (' + moment().format('YYYY') + '), \\' +
+        $('#urlpackage').val() + '{http://' + info.country + '.wikipedia.org/w/index.php?title=' + encodeURIComponent(info.title).split("%").join("\\%") + '&oldid=' + info.oldid + '}, ' +
+        'Online; accessed ' + moment().format('DD-MMMM-YYYY'));
+
+        // \bibitem{wiki:Plagiarism}Wikipedia. Plagiarism. (2020), \url{http://en.wikipedia.org/w/index.php?title=Plagiarism&oldid=939863223}, Online; accessed 19-February-2020
+
         $('#sample').html('Wikipedia. <em>' + info.title + '</em>. <tt><a href="http://' + info.country + '.wikipedia.org/w/index.php?title=' + encodeURIComponent(info.title) + '&amp;oldid=' + info.oldid + '">http://' + info.country + '.wikipedia.org/w/index.php?title='+ encodeURIComponent(info.title) +'&amp;oldid='+ info.oldid +'</a></tt>, ' + moment().format('YYYY') + '. [Online; accessed ' + moment().format('DD-MMMM-YYYY') + ']');
 
         });
