@@ -55,7 +55,7 @@ function updateBibtex() {
         '   note = {Online; accessed ' + moment().format('DD-MMMM-YYYY') + '}\n' +
         ' }');
 
-      $('#output1').text('\\bibitem{wiki:' + nameifyTitle(info.title) + '. Wikipedia. ' + info.title + '. (' + moment().format('YYYY') + '), \\' +
+      $('#output1').text('\\bibitem{wiki:' + nameifyTitle(info.title) + '}. Wikipedia. ' + info.title + '. (' + moment().format('YYYY') + '), \\' +
         $('#urlpackage').val() + '{http://' + info.country + '.wikipedia.org/w/index.php?title=' + encodeURIComponent(info.title).split("%").join("\\%") + '&oldid=' + info.oldid + '}, ' +
         'Online; accessed ' + moment().format('DD-MMMM-YYYY'));
 
